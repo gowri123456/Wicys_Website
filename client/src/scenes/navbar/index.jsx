@@ -9,6 +9,7 @@ import {
   FormControl,
   useTheme,
   useMediaQuery,
+  Button,
 } from "@mui/material";
 import {
   Search,
@@ -86,6 +87,16 @@ const Navbar = () => {
           <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
           <Help sx={{ fontSize: "25px" }} />
+
+          {/* ✅ Contact Us Button */}
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => navigate("/contact")}
+          >
+            Contact Us
+          </Button>
+
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -161,6 +172,19 @@ const Navbar = () => {
             <Message sx={{ fontSize: "25px" }} />
             <Notifications sx={{ fontSize: "25px" }} />
             <Help sx={{ fontSize: "25px" }} />
+
+            {/* ✅ Contact Us Button in Mobile Menu */}
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => {
+                navigate("/contact");
+                setIsMobileMenuToggled(false);
+              }}
+            >
+              Contact Us
+            </Button>
+
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
